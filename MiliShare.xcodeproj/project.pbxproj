@@ -1,0 +1,672 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D4F69F24DB284AFEB1163F0F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C847747BEE7543D4B573623F /* libPods.a */; };
+		FD1582E119513E67009C467C /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1582E019513E67009C467C /* Constants.m */; };
+		FD6EAF1B192D2555002CE5D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6EAF1A192D2555002CE5D0 /* Foundation.framework */; };
+		FD6EAF1D192D2555002CE5D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6EAF1C192D2555002CE5D0 /* CoreGraphics.framework */; };
+		FD6EAF1F192D2555002CE5D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6EAF1E192D2555002CE5D0 /* UIKit.framework */; };
+		FD6EAF25192D2555002CE5D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD6EAF23192D2555002CE5D0 /* InfoPlist.strings */; };
+		FD6EAF27192D2556002CE5D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EAF26192D2555002CE5D0 /* main.m */; };
+		FD6EAF2D192D2556002CE5D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD6EAF2C192D2556002CE5D0 /* Images.xcassets */; };
+		FD6EAF34192D2556002CE5D0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6EAF33192D2556002CE5D0 /* XCTest.framework */; };
+		FD6EAF35192D2556002CE5D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6EAF1A192D2555002CE5D0 /* Foundation.framework */; };
+		FD6EAF36192D2556002CE5D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6EAF1E192D2555002CE5D0 /* UIKit.framework */; };
+		FD6EAF3E192D2556002CE5D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD6EAF3C192D2556002CE5D0 /* InfoPlist.strings */; };
+		FD6EAF40192D2556002CE5D0 /* MiliShareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EAF3F192D2556002CE5D0 /* MiliShareTests.m */; };
+		FD6EAF4C192D2933002CE5D0 /* MSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EAF4B192D2933002CE5D0 /* MSAppDelegate.m */; };
+		FD6EAF50192D41AD002CE5D0 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EAF4F192D41AD002CE5D0 /* Card.m */; };
+		FD6EAF54192D428A002CE5D0 /* MappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EAF53192D428A002CE5D0 /* MappingProvider.m */; };
+		FD6EAF57192D431E002CE5D0 /* MSObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EAF56192D431E002CE5D0 /* MSObjectManager.m */; };
+		FD6EAF5A192D43AA002CE5D0 /* CardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EAF59192D43AA002CE5D0 /* CardManager.m */; };
+		FD6EAF5F192D5DCD002CE5D0 /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EAF5E192D5DCD002CE5D0 /* LandingViewController.m */; };
+		FD6EAF62192D5EBE002CE5D0 /* LandingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EAF61192D5EBE002CE5D0 /* LandingView.m */; };
+		FD6EAF65192DAD53002CE5D0 /* CardDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EAF64192DAD53002CE5D0 /* CardDetailController.m */; };
+		FD6EAF68192DAD62002CE5D0 /* CardDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EAF67192DAD62002CE5D0 /* CardDetailView.m */; };
+		FD6EAF75192FF99B002CE5D0 /* MSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EAF74192FF99B002CE5D0 /* MSUtils.m */; };
+		FD718FC41940222E00A8559F /* AttributedLabelDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD718FC31940222E00A8559F /* AttributedLabelDelegate.m */; };
+		FD718FCA1946B73100A8559F /* MSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD718FC91946B73100A8559F /* MSWebViewController.m */; };
+		FDE00A3A19331AF1007CD5F1 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE00A3919331AF1007CD5F1 /* UserData.m */; };
+		FDE4A0261936C6230058B610 /* NavigationControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE4A0251936C6230058B610 /* NavigationControllerDelegate.m */; };
+		FDE4A0291936C6610058B610 /* BounceAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE4A0281936C6610058B610 /* BounceAnimator.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD6EAF37192D2556002CE5D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD6EAF0F192D2555002CE5D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD6EAF16192D2555002CE5D0;
+			remoteInfo = MiliShare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1616A799408448EB9927B4D7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		C847747BEE7543D4B573623F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD1582DF19513E67009C467C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		FD1582E019513E67009C467C /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		FD6EAF17192D2555002CE5D0 /* MilliSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MilliSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD6EAF1A192D2555002CE5D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FD6EAF1C192D2555002CE5D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FD6EAF1E192D2555002CE5D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FD6EAF22192D2555002CE5D0 /* MiliShare-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MiliShare-Info.plist"; sourceTree = "<group>"; };
+		FD6EAF24192D2555002CE5D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FD6EAF26192D2555002CE5D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FD6EAF28192D2556002CE5D0 /* MiliShare-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MiliShare-Prefix.pch"; sourceTree = "<group>"; };
+		FD6EAF2C192D2556002CE5D0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MiliShare/Images.xcassets; sourceTree = "<group>"; };
+		FD6EAF32192D2556002CE5D0 /* MiliShareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiliShareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD6EAF33192D2556002CE5D0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		FD6EAF3B192D2556002CE5D0 /* MiliShareTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MiliShareTests-Info.plist"; sourceTree = "<group>"; };
+		FD6EAF3D192D2556002CE5D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FD6EAF3F192D2556002CE5D0 /* MiliShareTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiliShareTests.m; sourceTree = "<group>"; };
+		FD6EAF4A192D2933002CE5D0 /* MSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAppDelegate.h; sourceTree = "<group>"; };
+		FD6EAF4B192D2933002CE5D0 /* MSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSAppDelegate.m; sourceTree = "<group>"; };
+		FD6EAF4E192D41AD002CE5D0 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		FD6EAF4F192D41AD002CE5D0 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		FD6EAF52192D428A002CE5D0 /* MappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MappingProvider.h; sourceTree = "<group>"; };
+		FD6EAF53192D428A002CE5D0 /* MappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MappingProvider.m; sourceTree = "<group>"; };
+		FD6EAF55192D431E002CE5D0 /* MSObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSObjectManager.h; sourceTree = "<group>"; };
+		FD6EAF56192D431E002CE5D0 /* MSObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSObjectManager.m; sourceTree = "<group>"; };
+		FD6EAF58192D43AA002CE5D0 /* CardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardManager.h; sourceTree = "<group>"; };
+		FD6EAF59192D43AA002CE5D0 /* CardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardManager.m; sourceTree = "<group>"; };
+		FD6EAF5D192D5DCD002CE5D0 /* LandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LandingViewController.h; path = MiliShare/Controllers/LandingViewController.h; sourceTree = SOURCE_ROOT; };
+		FD6EAF5E192D5DCD002CE5D0 /* LandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LandingViewController.m; path = MiliShare/Controllers/LandingViewController.m; sourceTree = SOURCE_ROOT; };
+		FD6EAF60192D5EBE002CE5D0 /* LandingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LandingView.h; path = MiliShare/Views/LandingView.h; sourceTree = SOURCE_ROOT; };
+		FD6EAF61192D5EBE002CE5D0 /* LandingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LandingView.m; path = MiliShare/Views/LandingView.m; sourceTree = SOURCE_ROOT; };
+		FD6EAF63192DAD53002CE5D0 /* CardDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardDetailController.h; path = MiliShare/Controllers/CardDetailController.h; sourceTree = SOURCE_ROOT; };
+		FD6EAF64192DAD53002CE5D0 /* CardDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardDetailController.m; path = MiliShare/Controllers/CardDetailController.m; sourceTree = SOURCE_ROOT; };
+		FD6EAF66192DAD62002CE5D0 /* CardDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardDetailView.h; path = MiliShare/Views/CardDetailView.h; sourceTree = SOURCE_ROOT; };
+		FD6EAF67192DAD62002CE5D0 /* CardDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardDetailView.m; path = MiliShare/Views/CardDetailView.m; sourceTree = SOURCE_ROOT; };
+		FD6EAF73192FF99B002CE5D0 /* MSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUtils.h; sourceTree = "<group>"; };
+		FD6EAF74192FF99B002CE5D0 /* MSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUtils.m; sourceTree = "<group>"; };
+		FD718FC21940222E00A8559F /* AttributedLabelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedLabelDelegate.h; sourceTree = "<group>"; };
+		FD718FC31940222E00A8559F /* AttributedLabelDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedLabelDelegate.m; sourceTree = "<group>"; };
+		FD718FC81946B73000A8559F /* MSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWebViewController.h; sourceTree = "<group>"; };
+		FD718FC91946B73100A8559F /* MSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWebViewController.m; sourceTree = "<group>"; };
+		FDE00A3819331AF1007CD5F1 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserData.h; path = ../Models/UserData.h; sourceTree = "<group>"; };
+		FDE00A3919331AF1007CD5F1 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserData.m; path = ../Models/UserData.m; sourceTree = "<group>"; };
+		FDE4A0241936C6230058B610 /* NavigationControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationControllerDelegate.h; sourceTree = "<group>"; };
+		FDE4A0251936C6230058B610 /* NavigationControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationControllerDelegate.m; sourceTree = "<group>"; };
+		FDE4A0271936C6610058B610 /* BounceAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BounceAnimator.h; sourceTree = "<group>"; };
+		FDE4A0281936C6610058B610 /* BounceAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BounceAnimator.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD6EAF14192D2555002CE5D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD6EAF1D192D2555002CE5D0 /* CoreGraphics.framework in Frameworks */,
+				FD6EAF1F192D2555002CE5D0 /* UIKit.framework in Frameworks */,
+				FD6EAF1B192D2555002CE5D0 /* Foundation.framework in Frameworks */,
+				D4F69F24DB284AFEB1163F0F /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD6EAF2F192D2556002CE5D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD6EAF34192D2556002CE5D0 /* XCTest.framework in Frameworks */,
+				FD6EAF36192D2556002CE5D0 /* UIKit.framework in Frameworks */,
+				FD6EAF35192D2556002CE5D0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD6EAF0E192D2555002CE5D0 = {
+			isa = PBXGroup;
+			children = (
+				FD6EAF20192D2555002CE5D0 /* MiliShare */,
+				FD6EAF2C192D2556002CE5D0 /* Images.xcassets */,
+				FD6EAF39192D2556002CE5D0 /* MiliShareTests */,
+				FD6EAF19192D2555002CE5D0 /* Frameworks */,
+				FD6EAF18192D2555002CE5D0 /* Products */,
+				1616A799408448EB9927B4D7 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		FD6EAF18192D2555002CE5D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD6EAF17192D2555002CE5D0 /* MilliSync.app */,
+				FD6EAF32192D2556002CE5D0 /* MiliShareTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD6EAF19192D2555002CE5D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD6EAF1A192D2555002CE5D0 /* Foundation.framework */,
+				FD6EAF1C192D2555002CE5D0 /* CoreGraphics.framework */,
+				FD6EAF1E192D2555002CE5D0 /* UIKit.framework */,
+				FD6EAF33192D2556002CE5D0 /* XCTest.framework */,
+				C847747BEE7543D4B573623F /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD6EAF20192D2555002CE5D0 /* MiliShare */ = {
+			isa = PBXGroup;
+			children = (
+				FD6EAF4D192D293F002CE5D0 /* Models */,
+				FD6EAF51192D4275002CE5D0 /* Services */,
+				FD6EAF5B192D5D1E002CE5D0 /* Controllers */,
+				FD6EAF5C192D5D24002CE5D0 /* Views */,
+				FD6EAF72192FF986002CE5D0 /* Utils */,
+				FD6EAF49192D2933002CE5D0 /* AppDelegate */,
+				FD6EAF21192D2555002CE5D0 /* Supporting Files */,
+				FD1582DF19513E67009C467C /* Constants.h */,
+				FD1582E019513E67009C467C /* Constants.m */,
+			);
+			path = MiliShare;
+			sourceTree = "<group>";
+		};
+		FD6EAF21192D2555002CE5D0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD6EAF22192D2555002CE5D0 /* MiliShare-Info.plist */,
+				FD6EAF23192D2555002CE5D0 /* InfoPlist.strings */,
+				FD6EAF26192D2555002CE5D0 /* main.m */,
+				FD6EAF28192D2556002CE5D0 /* MiliShare-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD6EAF39192D2556002CE5D0 /* MiliShareTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD6EAF3F192D2556002CE5D0 /* MiliShareTests.m */,
+				FD6EAF3A192D2556002CE5D0 /* Supporting Files */,
+			);
+			path = MiliShareTests;
+			sourceTree = "<group>";
+		};
+		FD6EAF3A192D2556002CE5D0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD6EAF3B192D2556002CE5D0 /* MiliShareTests-Info.plist */,
+				FD6EAF3C192D2556002CE5D0 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD6EAF49192D2933002CE5D0 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				FD6EAF4A192D2933002CE5D0 /* MSAppDelegate.h */,
+				FD6EAF4B192D2933002CE5D0 /* MSAppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		FD6EAF4D192D293F002CE5D0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FD6EAF4E192D41AD002CE5D0 /* Card.h */,
+				FD6EAF4F192D41AD002CE5D0 /* Card.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FD6EAF51192D4275002CE5D0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FDE00A3819331AF1007CD5F1 /* UserData.h */,
+				FDE00A3919331AF1007CD5F1 /* UserData.m */,
+				FD6EAF52192D428A002CE5D0 /* MappingProvider.h */,
+				FD6EAF53192D428A002CE5D0 /* MappingProvider.m */,
+				FD6EAF55192D431E002CE5D0 /* MSObjectManager.h */,
+				FD6EAF56192D431E002CE5D0 /* MSObjectManager.m */,
+				FD6EAF58192D43AA002CE5D0 /* CardManager.h */,
+				FD6EAF59192D43AA002CE5D0 /* CardManager.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FD6EAF5B192D5D1E002CE5D0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FD718FC0194021CE00A8559F /* Landing */,
+				FD718FC1194021D300A8559F /* CardDetail */,
+				FD718FC81946B73000A8559F /* MSWebViewController.h */,
+				FD718FC91946B73100A8559F /* MSWebViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FD6EAF5C192D5D24002CE5D0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FD718FBE194021BF00A8559F /* Landing */,
+				FD718FBF194021C600A8559F /* CardDetail */,
+				FDE4A0241936C6230058B610 /* NavigationControllerDelegate.h */,
+				FDE4A0251936C6230058B610 /* NavigationControllerDelegate.m */,
+				FDE4A0271936C6610058B610 /* BounceAnimator.h */,
+				FDE4A0281936C6610058B610 /* BounceAnimator.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FD6EAF72192FF986002CE5D0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FD6EAF73192FF99B002CE5D0 /* MSUtils.h */,
+				FD6EAF74192FF99B002CE5D0 /* MSUtils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FD718FBE194021BF00A8559F /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				FD6EAF60192D5EBE002CE5D0 /* LandingView.h */,
+				FD6EAF61192D5EBE002CE5D0 /* LandingView.m */,
+			);
+			path = Landing;
+			sourceTree = "<group>";
+		};
+		FD718FBF194021C600A8559F /* CardDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FD6EAF66192DAD62002CE5D0 /* CardDetailView.h */,
+				FD6EAF67192DAD62002CE5D0 /* CardDetailView.m */,
+			);
+			path = CardDetail;
+			sourceTree = "<group>";
+		};
+		FD718FC0194021CE00A8559F /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				FD6EAF5D192D5DCD002CE5D0 /* LandingViewController.h */,
+				FD6EAF5E192D5DCD002CE5D0 /* LandingViewController.m */,
+			);
+			path = Landing;
+			sourceTree = "<group>";
+		};
+		FD718FC1194021D300A8559F /* CardDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FD6EAF63192DAD53002CE5D0 /* CardDetailController.h */,
+				FD6EAF64192DAD53002CE5D0 /* CardDetailController.m */,
+				FD718FC21940222E00A8559F /* AttributedLabelDelegate.h */,
+				FD718FC31940222E00A8559F /* AttributedLabelDelegate.m */,
+			);
+			path = CardDetail;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FD6EAF16192D2555002CE5D0 /* MiliShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD6EAF43192D2556002CE5D0 /* Build configuration list for PBXNativeTarget "MiliShare" */;
+			buildPhases = (
+				1DD3C85CAE5D4D2FB34D7F1A /* Check Pods Manifest.lock */,
+				FD6EAF13192D2555002CE5D0 /* Sources */,
+				FD6EAF14192D2555002CE5D0 /* Frameworks */,
+				FD6EAF15192D2555002CE5D0 /* Resources */,
+				769C15AD994C4455A46BBB94 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MiliShare;
+			productName = MiliShare;
+			productReference = FD6EAF17192D2555002CE5D0 /* MilliSync.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FD6EAF31192D2556002CE5D0 /* MiliShareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD6EAF46192D2556002CE5D0 /* Build configuration list for PBXNativeTarget "MiliShareTests" */;
+			buildPhases = (
+				FD6EAF2E192D2556002CE5D0 /* Sources */,
+				FD6EAF2F192D2556002CE5D0 /* Frameworks */,
+				FD6EAF30192D2556002CE5D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD6EAF38192D2556002CE5D0 /* PBXTargetDependency */,
+			);
+			name = MiliShareTests;
+			productName = MiliShareTests;
+			productReference = FD6EAF32192D2556002CE5D0 /* MiliShareTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD6EAF0F192D2555002CE5D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MS;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = FindBoat;
+				TargetAttributes = {
+					FD6EAF31192D2556002CE5D0 = {
+						TestTargetID = FD6EAF16192D2555002CE5D0;
+					};
+				};
+			};
+			buildConfigurationList = FD6EAF12192D2555002CE5D0 /* Build configuration list for PBXProject "MiliShare" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FD6EAF0E192D2555002CE5D0;
+			productRefGroup = FD6EAF18192D2555002CE5D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD6EAF16192D2555002CE5D0 /* MiliShare */,
+				FD6EAF31192D2556002CE5D0 /* MiliShareTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD6EAF15192D2555002CE5D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD6EAF25192D2555002CE5D0 /* InfoPlist.strings in Resources */,
+				FD6EAF2D192D2556002CE5D0 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD6EAF30192D2556002CE5D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD6EAF3E192D2556002CE5D0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DD3C85CAE5D4D2FB34D7F1A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		769C15AD994C4455A46BBB94 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD6EAF13192D2555002CE5D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDE4A0261936C6230058B610 /* NavigationControllerDelegate.m in Sources */,
+				FD6EAF65192DAD53002CE5D0 /* CardDetailController.m in Sources */,
+				FD6EAF68192DAD62002CE5D0 /* CardDetailView.m in Sources */,
+				FD718FC41940222E00A8559F /* AttributedLabelDelegate.m in Sources */,
+				FD6EAF62192D5EBE002CE5D0 /* LandingView.m in Sources */,
+				FD6EAF4C192D2933002CE5D0 /* MSAppDelegate.m in Sources */,
+				FD6EAF5F192D5DCD002CE5D0 /* LandingViewController.m in Sources */,
+				FD6EAF57192D431E002CE5D0 /* MSObjectManager.m in Sources */,
+				FD1582E119513E67009C467C /* Constants.m in Sources */,
+				FD6EAF27192D2556002CE5D0 /* main.m in Sources */,
+				FDE4A0291936C6610058B610 /* BounceAnimator.m in Sources */,
+				FD6EAF50192D41AD002CE5D0 /* Card.m in Sources */,
+				FD718FCA1946B73100A8559F /* MSWebViewController.m in Sources */,
+				FD6EAF54192D428A002CE5D0 /* MappingProvider.m in Sources */,
+				FD6EAF5A192D43AA002CE5D0 /* CardManager.m in Sources */,
+				FDE00A3A19331AF1007CD5F1 /* UserData.m in Sources */,
+				FD6EAF75192FF99B002CE5D0 /* MSUtils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD6EAF2E192D2556002CE5D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD6EAF40192D2556002CE5D0 /* MiliShareTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD6EAF38192D2556002CE5D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD6EAF16192D2555002CE5D0 /* MiliShare */;
+			targetProxy = FD6EAF37192D2556002CE5D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FD6EAF23192D2555002CE5D0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD6EAF24192D2555002CE5D0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FD6EAF3C192D2556002CE5D0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD6EAF3D192D2556002CE5D0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FD6EAF41192D2556002CE5D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FD6EAF42192D2556002CE5D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FD6EAF44192D2556002CE5D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1616A799408448EB9927B4D7 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MiliShare/MiliShare-Prefix.pch";
+				INFOPLIST_FILE = "MiliShare/MiliShare-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = MilliSync;
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FD6EAF45192D2556002CE5D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1616A799408448EB9927B4D7 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MiliShare/MiliShare-Prefix.pch";
+				INFOPLIST_FILE = "MiliShare/MiliShare-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = MilliSync;
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FD6EAF47192D2556002CE5D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MiliShare.app/MiliShare";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MiliShare/MiliShare-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MiliShareTests/MiliShareTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		FD6EAF48192D2556002CE5D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MiliShare.app/MiliShare";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MiliShare/MiliShare-Prefix.pch";
+				INFOPLIST_FILE = "MiliShareTests/MiliShareTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD6EAF12192D2555002CE5D0 /* Build configuration list for PBXProject "MiliShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD6EAF41192D2556002CE5D0 /* Debug */,
+				FD6EAF42192D2556002CE5D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD6EAF43192D2556002CE5D0 /* Build configuration list for PBXNativeTarget "MiliShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD6EAF44192D2556002CE5D0 /* Debug */,
+				FD6EAF45192D2556002CE5D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD6EAF46192D2556002CE5D0 /* Build configuration list for PBXNativeTarget "MiliShareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD6EAF47192D2556002CE5D0 /* Debug */,
+				FD6EAF48192D2556002CE5D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD6EAF0F192D2555002CE5D0 /* Project object */;
+}
