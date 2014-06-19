@@ -15,7 +15,6 @@
 @property (nonatomic, strong) UIButton *infoButton;
 @property (nonatomic, strong) UILabel *invalidChannelLabel;
 
-
 - (void)appearWithAnimation;
 - (void)toggleChannelValidity:(BOOL)valid animated:(BOOL)animated;
 

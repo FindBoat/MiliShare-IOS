@@ -62,7 +62,7 @@
 }
 
 - (void)applyConstraints {
-    // Constraints for channelTextField.
+     // Constraints for channelTextField.
     [self addConstraint:[NSLayoutConstraint constraintWithItem:self.channelTextField
                                                      attribute:NSLayoutAttributeCenterX
                                                      relatedBy:NSLayoutRelationEqual
