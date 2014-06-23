@@ -20,7 +20,9 @@
 
 - (void)appearWithAnimation;
 - (void)toggleChannelValidity:(BOOL)valid animated:(BOOL)animated;
-- (void)showSuggestions:(NSArray *)suggestions;
+
+- (void)setupSuggestButtons:(NSArray *)suggestions;
+- (void)showSuggestions;
 - (void)hideSuggestions;
 
 @end

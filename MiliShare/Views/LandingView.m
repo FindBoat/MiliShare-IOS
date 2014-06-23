@@ -206,7 +206,7 @@
     }
 }
 
-- (void)showSuggestions:(NSArray *)suggestions {
+-(void)setupSuggestButtons:(NSArray *)suggestions {
     if ([self needToRefreshSuggestions:suggestions]) {
         // Remove stale suggest buttons;
         for (UIButton *button in self.suggestButtons) {
@@ -254,8 +254,9 @@
         }
         [self needsUpdateConstraints];
     }
-    
-    // Show suggest buttons with animation.
+}
+
+- (void)showSuggestions {
     for (UIButton *button in self.suggestButtons) {
         [self animateSuggestButton:button appear:YES];
     }
@@ -285,6 +286,7 @@
     [[button layer] setBorderWidth:1.0f];
     [[button layer] setBorderColor:[UIColor lightGrayColor].CGColor];
     [button setTitleEdgeInsets:UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0)];
+    button.hidden = YES;
     button.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:button];
     

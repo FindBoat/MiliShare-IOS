@@ -30,9 +30,6 @@
     self.landingView.channelTextField.delegate = self;
     self.landingView.channelTextField.text = [[UserData sharedUserData] lastChannel];
     [self.landingView.infoButton addTarget:self action:@selector(infoButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    for (UIButton *button in self.landingView.suggestButtons) {
-        [button addTarget:self action:@selector(suggestButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    }
     self.view = self.landingView;
     
     // Tap to dismiss keyboard.
@@ -47,6 +44,10 @@
     // Load suggestions.
     [[CardManager sharedManager] getLatestCards:3 success:^(NSArray *cards) {
         self.suggestions = cards;
+        [self.landingView setupSuggestButtons:self.suggestions];
+        for (UIButton *button in self.landingView.suggestButtons) {
+            [button addTarget:self action:@selector(suggestButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        }
     } failure:nil];
 }
 
@@ -72,7 +73,7 @@
 
 #pragma mark - UITextFieldDelegate
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    [self.landingView showSuggestions:self.suggestions];
+    [self.landingView showSuggestions];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -117,7 +118,7 @@
 
 - (void)suggestButtonAction:(id)sender {
     [self dismissKeyboard];
-    
+    NSLog(@"333");
     NSString *channel = [[(UIButton *)sender titleLabel] text];
     self.landingView.channelTextField.text = channel;
     [self goToChannel:channel];
