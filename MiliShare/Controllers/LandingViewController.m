@@ -18,6 +18,7 @@
 @interface LandingViewController () <UITextFieldDelegate>
 
 @property (nonatomic, strong) LandingView *landingView;
+@property (nonatomic, strong) NSArray *suggestions;
 
 @end
 
@@ -29,6 +30,9 @@
     self.landingView.channelTextField.delegate = self;
     self.landingView.channelTextField.text = [[UserData sharedUserData] lastChannel];
     [self.landingView.infoButton addTarget:self action:@selector(infoButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    for (UIButton *button in self.landingView.suggestButtons) {
+        [button addTarget:self action:@selector(suggestButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
     self.view = self.landingView;
     
     // Tap to dismiss keyboard.
@@ -39,6 +43,11 @@
     UISwipeGestureRecognizer * swipeLeft=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeLeft:)];
     swipeLeft.direction=UISwipeGestureRecognizerDirectionLeft;
     [self.view addGestureRecognizer:swipeLeft];
+    
+    // Load suggestions.
+    [[CardManager sharedManager] getLatestCards:3 success:^(NSArray *cards) {
+        self.suggestions = cards;
+    } failure:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -62,10 +71,14 @@
 }
 
 #pragma mark - UITextFieldDelegate
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self.landingView showSuggestions:self.suggestions];
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     NSString *channel = textField.text;
     if ([MSUtils isChannelValid:channel]) {
-        [textField resignFirstResponder];
+        [self dismissKeyboard];
         [self.landingView toggleChannelValidity:YES animated:YES];
         [self goToChannel:channel];
     } else {
@@ -76,6 +89,8 @@
 
 #pragma mark - button.
 - (void)infoButtonAction:(id)sender {
+    [self dismissKeyboard];
+
     self.landingView.channelTextField.text = @"About";
     [self goToChannel:@"About"];
 }
@@ -100,7 +115,16 @@
     }];
 }
 
+- (void)suggestButtonAction:(id)sender {
+    [self dismissKeyboard];
+    
+    NSString *channel = [[(UIButton *)sender titleLabel] text];
+    self.landingView.channelTextField.text = channel;
+    [self goToChannel:channel];
+}
+
 - (void)dismissKeyboard {
+    [self.landingView hideSuggestions];
     [self.landingView.channelTextField resignFirstResponder];
 }
 

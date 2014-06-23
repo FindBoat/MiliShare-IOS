@@ -27,6 +27,18 @@
     }];
 }
 
+- (void)getLatestCards:(NSInteger)count success:(void (^)(NSArray *))success failure:(void (^)(RKObjectRequestOperation *, NSError *))failure {
+    [self getObjectsAtPath:@"/api/cards" parameters:@{@"count": [NSNumber numberWithInteger: count]} success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        if (success) {
+            success(mappingResult.array);
+        }
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        if (failure) {
+            failure(operation, error);
+        }
+    }];
+}
+
 - (void)create:(Card *)card success:(void (^)(Card *card))success failure:(void (^)(RKObjectRequestOperation *operation, NSError *error))failure {
     [self postObject:card path:@"/api/cards" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         if (success) {

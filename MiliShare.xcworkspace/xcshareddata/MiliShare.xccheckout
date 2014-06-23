@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E2F9EF2C-0833-48D2-87A2-501ACAFF7BE6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MiliShare</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>AA0C2663-D24C-4B0F-942D-E82FAFAF7AD2</key>
+		<string>https://github.com/FindBoat/MiliShare-IOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MiliShare.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>AA0C2663-D24C-4B0F-942D-E82FAFAF7AD2</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/FindBoat/MiliShare-IOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>AA0C2663-D24C-4B0F-942D-E82FAFAF7AD2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AA0C2663-D24C-4B0F-942D-E82FAFAF7AD2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MiliShare</string>
+		</dict>
+	</array>
+</dict>
+</plist>

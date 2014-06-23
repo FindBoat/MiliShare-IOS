@@ -11,5 +11,7 @@
 @implementation Constants
 
 NSString *const BaseServerURL = @"http://millisync.com";
+//NSString *const BaseServerURL = @"http://localhost:9999";
+
 
 @end

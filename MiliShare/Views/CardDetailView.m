@@ -43,7 +43,6 @@
     self.contentLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.contentLabel.numberOfLines = 0;
     self.contentLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:16.0];
-//    self.contentLabel.textColor = [MSUtils colorWithHexString:@"#666"];
     self.contentLabel.textColor = [UIColor darkGrayColor];
     self.contentLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:self.contentLabel];

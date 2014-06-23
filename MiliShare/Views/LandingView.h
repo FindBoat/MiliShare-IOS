@@ -15,7 +15,12 @@
 @property (nonatomic, strong) UIButton *infoButton;
 @property (nonatomic, strong) UILabel *invalidChannelLabel;
 
+// Suggest.
+@property (nonatomic, strong) NSMutableArray *suggestButtons;
+
 - (void)appearWithAnimation;
 - (void)toggleChannelValidity:(BOOL)valid animated:(BOOL)animated;
+- (void)showSuggestions:(NSArray *)suggestions;
+- (void)hideSuggestions;
 
 @end

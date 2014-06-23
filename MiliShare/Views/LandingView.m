@@ -6,10 +6,13 @@
 //  Copyright (c) 2014 FindBoat. All rights reserved.
 //
 
+#import "Card.h"
 #import "LandingView.h"
 #import "MSUtils.h"
 #import "UITextField+Shake.h"
+#import <QuartzCore/QuartzCore.h>
 
+#define ARC4RANDOM_MAX      0x100000000
 
 @implementation LandingView
 
@@ -51,6 +54,10 @@
         self.invalidChannelLabel.hidden = YES;
         self.invalidChannelLabel.translatesAutoresizingMaskIntoConstraints = NO;
         [self addSubview:self.invalidChannelLabel];
+        
+        if (!self.suggestButtons) {
+            self.suggestButtons = [NSMutableArray new];
+        }
         
         self.backgroundColor = [MSUtils colorWithHexString:@"FAFAFA"];
        
@@ -176,7 +183,8 @@
     self.instructionLabel.alpha = 0.0;
     self.infoButton.alpha = 0.0;
     [UIView animateWithDuration:0.5
-                          delay:0.9 options:0
+                          delay:0.9
+                        options:0
                      animations:^{
                          self.instructionLabel.alpha = 1.0;
                          self.infoButton.alpha = 1.0;
@@ -195,6 +203,147 @@
              ];
         }
         self.invalidChannelLabel.hidden = NO;
+    }
+}
+
+- (void)showSuggestions:(NSArray *)suggestions {
+    if ([self needToRefreshSuggestions:suggestions]) {
+        // Remove stale suggest buttons;
+        for (UIButton *button in self.suggestButtons) {
+            [button removeFromSuperview];
+        }
+        [self.suggestButtons removeAllObjects];
+        
+        // Create new suggest buttons.
+        for (Card *card in suggestions) {
+            UIButton *button = [self createSuggestButtonWithChannel:card.channel];
+            [self.suggestButtons addObject:button];
+        }
+        
+        // Setting constraints to display suggest buttons in equal spacing.
+        float between = self.frame.size.width / (self.suggestButtons.count + 1);
+        for (int i = 0; i < self.suggestButtons.count; i++) {
+            [self addConstraint:[NSLayoutConstraint constraintWithItem:self.suggestButtons[i]
+                                                             attribute:NSLayoutAttributeCenterX
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:self
+                                                             attribute:NSLayoutAttributeLeft
+                                                            multiplier:1
+                                                              constant:between * (i + 1)]];
+            [self addConstraint:[NSLayoutConstraint constraintWithItem:self.suggestButtons[i]
+                                                             attribute:NSLayoutAttributeCenterY
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:self.channelTextField
+                                                             attribute:NSLayoutAttributeTop
+                                                            multiplier:1
+                                                              constant:-30.0f]];
+            [self addConstraint:[NSLayoutConstraint constraintWithItem:self.suggestButtons[i]
+                                                             attribute:NSLayoutAttributeWidth
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:nil
+                                                             attribute:NSLayoutAttributeNotAnAttribute
+                                                            multiplier:1
+                                                              constant:70]];
+            [self addConstraint:[NSLayoutConstraint constraintWithItem:self.suggestButtons[i]
+                                                             attribute:NSLayoutAttributeHeight
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:nil
+                                                             attribute:NSLayoutAttributeNotAnAttribute
+                                                            multiplier:1
+                                                              constant:25]];
+        }
+        [self needsUpdateConstraints];
+    }
+    
+    // Show suggest buttons with animation.
+    for (UIButton *button in self.suggestButtons) {
+        [self animateSuggestButton:button appear:YES];
+    }
+}
+
+- (BOOL)needToRefreshSuggestions:(NSArray *)suggestions {
+    if (self.suggestButtons.count != suggestions.count) {
+        return YES;
+    } else {
+        for (int i = 0; i < self.suggestButtons.count; ++i) {
+            UIButton *button = self.suggestButtons[i];
+            if (![button.titleLabel.text isEqualToString:((Card *)suggestions[i]).channel]) {
+                return YES;
+            }
+        }
+    }
+    
+    return NO;
+}
+
+- (UIButton *)createSuggestButtonWithChannel:(NSString *)channel {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:13.0];
+    [button setTitle:channel forState:UIControlStateNormal];
+    [[button layer] setCornerRadius:15];
+    [[button layer] setBorderWidth:1.0f];
+    [[button layer] setBorderColor:[UIColor lightGrayColor].CGColor];
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0)];
+    button.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addSubview:button];
+    
+    return button;
+}
+
+- (void)animateSuggestButton:(UIButton *)button appear:(BOOL)appear {
+    if (appear) {
+        float randomDelay = ((double)arc4random() / ARC4RANDOM_MAX) * .3;
+        button.hidden = NO;
+        button.transform = CGAffineTransformMakeScale(0.01, 0.01);
+        [UIView animateKeyframesWithDuration:0.35
+                                       delay:randomDelay
+                                     options:0
+                                  animations:^{
+                                      [UIView addKeyframeWithRelativeStartTime:0
+                                                              relativeDuration:0.8
+                                                                    animations:^{
+                                                                        button.transform = CGAffineTransformMakeScale(1.3, 1.3);
+                                                                    }];
+                                      [UIView addKeyframeWithRelativeStartTime:0.8
+                                                              relativeDuration:0.2
+                                                                    animations:^{
+                                                                        button.transform = CGAffineTransformIdentity;
+                                                                    }];
+                                  }
+                                  completion:nil];
+    } else {
+        [UIView animateKeyframesWithDuration:0.35
+                                       delay:0
+                                     options:0
+                                  animations:^{
+                                      [UIView addKeyframeWithRelativeStartTime:0
+                                                              relativeDuration:0.2
+                                                                    animations:^{
+                                                                        // This is a workaround to fix the weird jump caused by auto layout.
+                                                                        CGRect currentFrame = button.frame;
+                                                                        currentFrame.origin.y += 0.01;
+                                                                        button.frame = currentFrame;
+                                                                        button.transform = CGAffineTransformMakeScale(1.3, 1.3);
+                                                                    }];
+                                      [UIView addKeyframeWithRelativeStartTime:0.2
+                                                              relativeDuration:0.8
+                                                                    animations:^{
+                                                                        button.transform = CGAffineTransformMakeScale(0.01, 0.01);
+                                                                    }];
+                                  }
+                                  completion:^(BOOL finished){
+                                      if (finished) {
+                                          button.hidden = YES;
+                                          button.transform = CGAffineTransformIdentity;
+                                      }
+                                  }];
+    }
+}
+
+- (void)hideSuggestions {
+    for (UIButton *button in self.suggestButtons) {
+        [self animateSuggestButton:button appear:NO];
     }
 }
 

@@ -90,6 +90,8 @@
 		FD718FC31940222E00A8559F /* AttributedLabelDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedLabelDelegate.m; sourceTree = "<group>"; };
 		FD718FC81946B73000A8559F /* MSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWebViewController.h; sourceTree = "<group>"; };
 		FD718FC91946B73100A8559F /* MSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWebViewController.m; sourceTree = "<group>"; };
+		FD9899D619560A3F0082FFAC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FD9899D819560A490082FFAC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FDE00A3819331AF1007CD5F1 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserData.h; path = ../Models/UserData.h; sourceTree = "<group>"; };
 		FDE00A3919331AF1007CD5F1 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserData.m; path = ../Models/UserData.m; sourceTree = "<group>"; };
 		FDE4A0241936C6230058B610 /* NavigationControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationControllerDelegate.h; sourceTree = "<group>"; };
@@ -147,6 +149,8 @@
 		FD6EAF19192D2555002CE5D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FD9899D819560A490082FFAC /* CoreLocation.framework */,
+				FD9899D619560A3F0082FFAC /* MapKit.framework */,
 				FD6EAF1A192D2555002CE5D0 /* Foundation.framework */,
 				FD6EAF1C192D2555002CE5D0 /* CoreGraphics.framework */,
 				FD6EAF1E192D2555002CE5D0 /* UIKit.framework */,
@@ -355,6 +359,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = FindBoat;
 				TargetAttributes = {
+					FD6EAF16192D2555002CE5D0 = {
+						DevelopmentTeam = FQTRFDP3X7;
+					};
 					FD6EAF31192D2556002CE5D0 = {
 						TestTargetID = FD6EAF16192D2555002CE5D0;
 					};
@@ -570,6 +577,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MiliShare/MiliShare-Prefix.pch";
 				INFOPLIST_FILE = "MiliShare/MiliShare-Info.plist";
@@ -586,6 +594,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MiliShare/MiliShare-Prefix.pch";
 				INFOPLIST_FILE = "MiliShare/MiliShare-Info.plist";
