@@ -33,13 +33,9 @@ int const kActionSheetForAddress = 1;
 #pragma mark - TTTAttributedLabelDelegate.
 - (void)attributedLabel:(__unused TTTAttributedLabel *)label didSelectLinkWithURL:(NSURL *)url {
     self.url = [url absoluteString];
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:self.url
-                                                             delegate:self
-                                                    cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
-                                               destructiveButtonTitle:nil
-                                                    otherButtonTitles:NSLocalizedString(@"Open in browser", nil), nil];
-    actionSheet.tag = kActionSheetForLink;
-    [actionSheet showInView:self.viewController.view];
+    MSWebViewController *webViewController = [[MSWebViewController alloc] init];
+    webViewController.url = [NSURL URLWithString:self.url];
+    [self.viewController.navigationController pushViewController:webViewController animated:YES];
 }
 
 - (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithPhoneNumber:(NSString *)phoneNumber {
@@ -70,13 +66,6 @@ int const kActionSheetForAddress = 1;
     }
     
     switch (actionSheet.tag) {
-        case kActionSheetForLink:
-        {
-            MSWebViewController *webViewController = [[MSWebViewController alloc] init];
-            webViewController.url = [NSURL URLWithString:self.url];
-            [self.viewController.navigationController pushViewController:webViewController animated:YES];
-            break;
-        }
         case kActionSheetForAddress:
             [MSUtils openAddressInMap:self.address];
         default:

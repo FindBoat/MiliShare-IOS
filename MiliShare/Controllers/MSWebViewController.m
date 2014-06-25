@@ -15,9 +15,17 @@
 @implementation MSWebViewController
 
 - (void)loadView {
+    self.navigationItem.hidesBackButton = YES;
+    self.navigationItem.title = @"MilliSync";
+    
     UIWebView *webView = [[UIWebView alloc] init];
     webView.scalesPageToFit = YES;
     self.view = webView;
+    
+    // Swipe to back.
+    UISwipeGestureRecognizer * swipeRight=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeRight:)];
+    swipeRight.direction=UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:swipeRight];
 }
 
 - (void)setUrl:(NSURL *)url {
@@ -26,6 +34,11 @@
         NSURLRequest *req = [NSURLRequest requestWithURL:_url];
         [(UIWebView *)self.view loadRequest:req];
     }
+}
+
+#pragma mark - Swipe action.
+- (void)swipeRight:(UISwipeGestureRecognizer *)gestureRecognizer {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
