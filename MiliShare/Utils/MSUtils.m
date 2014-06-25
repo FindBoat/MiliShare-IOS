@@ -48,8 +48,12 @@
 }
 
 + (void)showErrorAlertWithTitle:(NSString *)title andMessage:(NSString *)message {
+    [self showErrorAlertWithTitle:title andMessage:message andPosition:OLGhostAlertViewPositionBottom];
+}
+
++ (void)showErrorAlertWithTitle:(NSString *)title andMessage:(NSString *)message andPosition:(OLGhostAlertViewPosition)position {
     OLGhostAlertView *ghastly = [[OLGhostAlertView alloc] initWithTitle:title message:message];
-    ghastly.position = OLGhostAlertViewPositionBottom;
+    ghastly.position = position;
     ghastly.style = OLGhostAlertViewStyleDark;
     ghastly.timeout = 1.5;
     [ghastly show];
@@ -85,6 +89,5 @@
                      }];
     }
 }
-
 
 @end

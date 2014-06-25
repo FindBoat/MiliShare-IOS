@@ -13,13 +13,12 @@
 @property (nonatomic, strong) UITextField *channelTextField;
 @property (nonatomic, strong) UILabel *instructionLabel;
 @property (nonatomic, strong) UIButton *infoButton;
-@property (nonatomic, strong) UILabel *invalidChannelLabel;
 
 // Suggest.
 @property (nonatomic, strong) NSMutableArray *suggestButtons;
 
 - (void)appearWithAnimation;
-- (void)toggleChannelValidity:(BOOL)valid animated:(BOOL)animated;
+- (void)shakeChannelTextField;
 
 - (void)setupSuggestButtons:(NSArray *)suggestions;
 - (void)showSuggestions;

@@ -46,15 +46,6 @@
         self.infoButton.translatesAutoresizingMaskIntoConstraints = NO;
         [self addSubview:self.infoButton];
         
-        self.invalidChannelLabel = [UILabel new];
-        self.invalidChannelLabel.textAlignment = NSTextAlignmentCenter;
-        self.invalidChannelLabel.text = @"Only letters and digits are allowed.";
-        self.invalidChannelLabel.font = [UIFont systemFontOfSize:12.0f];
-        self.invalidChannelLabel.textColor = [UIColor darkGrayColor];
-        self.invalidChannelLabel.hidden = YES;
-        self.invalidChannelLabel.translatesAutoresizingMaskIntoConstraints = NO;
-        [self addSubview:self.invalidChannelLabel];
-        
         if (!self.suggestButtons) {
             self.suggestButtons = [NSMutableArray new];
         }
@@ -62,8 +53,6 @@
         self.backgroundColor = [MSUtils colorWithHexString:@"FAFAFA"];
        
         [self applyConstraints];
-
-
     }
     return self;
 }
@@ -98,29 +87,6 @@
                                                      attribute:NSLayoutAttributeNotAnAttribute
                                                     multiplier:1
                                                       constant:220.0f]];
-
-    // Constraints for invalidChannelLabel.
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.invalidChannelLabel
-                                                     attribute:NSLayoutAttributeCenterX
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:self
-                                                     attribute:NSLayoutAttributeCenterX
-                                                    multiplier:1
-                                                      constant:0]];
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.invalidChannelLabel
-                                                     attribute:NSLayoutAttributeBottom
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:self.channelTextField
-                                                     attribute:NSLayoutAttributeTop
-                                                    multiplier:1
-                                                      constant:-10.0f]];
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.invalidChannelLabel
-                                                     attribute:NSLayoutAttributeWidth
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:nil
-                                                     attribute:NSLayoutAttributeNotAnAttribute
-                                                    multiplier:1
-                                                      constant:250.0f]];
 
     // Constraints for instructionLabel.
     [self addConstraint:[NSLayoutConstraint constraintWithItem:self.instructionLabel
@@ -192,68 +158,59 @@
                      completion:nil];
 }
 
-- (void)toggleChannelValidity:(BOOL)valid animated:(BOOL)animated {
-    if (valid) {
-        self.invalidChannelLabel.hidden = YES;
-    } else {
-        if (animated) {
-            [self.channelTextField shake:10   // 10 times
-                               withDelta:10   // 10 points wide
-                                andSpeed:0.05 // 50ms per shake
-             ];
-        }
-        self.invalidChannelLabel.hidden = NO;
-    }
+- (void)shakeChannelTextField {
+    [self.channelTextField shake:10   // 10 times
+                       withDelta:10   // 10 points wide
+                        andSpeed:0.05 // 50ms per shake
+     ];
 }
 
--(void)setupSuggestButtons:(NSArray *)suggestions {
-    if ([self needToRefreshSuggestions:suggestions]) {
-        // Remove stale suggest buttons;
-        for (UIButton *button in self.suggestButtons) {
-            [button removeFromSuperview];
-        }
-        [self.suggestButtons removeAllObjects];
-        
-        // Create new suggest buttons.
-        for (Card *card in suggestions) {
-            UIButton *button = [self createSuggestButtonWithChannel:card.channel];
-            [self.suggestButtons addObject:button];
-        }
-        
-        // Setting constraints to display suggest buttons in equal spacing.
-        float between = self.frame.size.width / (self.suggestButtons.count + 1);
-        for (int i = 0; i < self.suggestButtons.count; i++) {
-            [self addConstraint:[NSLayoutConstraint constraintWithItem:self.suggestButtons[i]
-                                                             attribute:NSLayoutAttributeCenterX
-                                                             relatedBy:NSLayoutRelationEqual
-                                                                toItem:self
-                                                             attribute:NSLayoutAttributeLeft
-                                                            multiplier:1
-                                                              constant:between * (i + 1)]];
-            [self addConstraint:[NSLayoutConstraint constraintWithItem:self.suggestButtons[i]
-                                                             attribute:NSLayoutAttributeCenterY
-                                                             relatedBy:NSLayoutRelationEqual
-                                                                toItem:self.channelTextField
-                                                             attribute:NSLayoutAttributeTop
-                                                            multiplier:1
-                                                              constant:-30.0f]];
-            [self addConstraint:[NSLayoutConstraint constraintWithItem:self.suggestButtons[i]
-                                                             attribute:NSLayoutAttributeWidth
-                                                             relatedBy:NSLayoutRelationEqual
-                                                                toItem:nil
-                                                             attribute:NSLayoutAttributeNotAnAttribute
-                                                            multiplier:1
-                                                              constant:70]];
-            [self addConstraint:[NSLayoutConstraint constraintWithItem:self.suggestButtons[i]
-                                                             attribute:NSLayoutAttributeHeight
-                                                             relatedBy:NSLayoutRelationEqual
-                                                                toItem:nil
-                                                             attribute:NSLayoutAttributeNotAnAttribute
-                                                            multiplier:1
-                                                              constant:25]];
-        }
-        [self needsUpdateConstraints];
+- (void)setupSuggestButtons:(NSArray *)suggestions {
+    // Remove stale suggest buttons;
+    for (UIButton *button in self.suggestButtons) {
+        [button removeFromSuperview];
     }
+    [self.suggestButtons removeAllObjects];
+    
+    // Create new suggest buttons.
+    for (Card *card in suggestions) {
+        UIButton *button = [self createSuggestButtonWithChannel:card.channel];
+        [self.suggestButtons addObject:button];
+    }
+    
+    // Setting constraints to display suggest buttons in equal spacing.
+    float between = self.frame.size.width / (self.suggestButtons.count + 1);
+    for (int i = 0; i < self.suggestButtons.count; i++) {
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:self.suggestButtons[i]
+                                                         attribute:NSLayoutAttributeCenterX
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeLeft
+                                                        multiplier:1
+                                                          constant:between * (i + 1)]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:self.suggestButtons[i]
+                                                         attribute:NSLayoutAttributeCenterY
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self.channelTextField
+                                                         attribute:NSLayoutAttributeTop
+                                                        multiplier:1
+                                                          constant:-30.0f]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:self.suggestButtons[i]
+                                                         attribute:NSLayoutAttributeWidth
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:nil
+                                                         attribute:NSLayoutAttributeNotAnAttribute
+                                                        multiplier:1
+                                                          constant:70]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:self.suggestButtons[i]
+                                                         attribute:NSLayoutAttributeHeight
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:nil
+                                                         attribute:NSLayoutAttributeNotAnAttribute
+                                                        multiplier:1
+                                                          constant:25]];
+    }
+    [self needsUpdateConstraints];
 }
 
 - (void)showSuggestions {
@@ -262,20 +219,14 @@
     }
 }
 
-- (BOOL)needToRefreshSuggestions:(NSArray *)suggestions {
-    if (self.suggestButtons.count != suggestions.count) {
-        return YES;
-    } else {
-        for (int i = 0; i < self.suggestButtons.count; ++i) {
-            UIButton *button = self.suggestButtons[i];
-            if (![button.titleLabel.text isEqualToString:((Card *)suggestions[i]).channel]) {
-                return YES;
-            }
-        }
+
+- (void)hideSuggestions {
+    for (UIButton *button in self.suggestButtons) {
+        [self animateSuggestButton:button appear:NO];
     }
-    
-    return NO;
 }
+
+# pragma - Helper methods.
 
 - (UIButton *)createSuggestButtonWithChannel:(NSString *)channel {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -343,10 +294,5 @@
     }
 }
 
-- (void)hideSuggestions {
-    for (UIButton *button in self.suggestButtons) {
-        [self animateSuggestButton:button appear:NO];
-    }
-}
 
 @end

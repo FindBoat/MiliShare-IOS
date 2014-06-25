@@ -375,7 +375,7 @@
     [components setDay:1];
     NSDate *deadline = [[NSCalendar currentCalendar] dateByAddingComponents:components toDate:createTime options:0];
     
-    return [deadline timeIntervalSinceDate:[NSDate date]];
+    return [deadline timeIntervalSinceNow];
 }
 
 - (void)animateCard {

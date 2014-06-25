@@ -13,6 +13,8 @@
 #import "UserData.h"
 #import "MSUtils.h"
 #import "SVProgressHUD.h"
+#import "OLGhostAlertView.h"
+#import "Card.h"
 
 
 @interface LandingViewController () <UITextFieldDelegate>
@@ -40,34 +42,35 @@
     UISwipeGestureRecognizer * swipeLeft=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeLeft:)];
     swipeLeft.direction=UISwipeGestureRecognizerDirectionLeft;
     [self.view addGestureRecognizer:swipeLeft];
-    
-    // Load suggestions.
-    [[CardManager sharedManager] getLatestCards:3 success:^(NSArray *cards) {
-        self.suggestions = cards;
-        [self.landingView setupSuggestButtons:self.suggestions];
-        for (UIButton *button in self.landingView.suggestButtons) {
-            [button addTarget:self action:@selector(suggestButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-        }
-    } failure:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
     // The animation below only happens for once.
-    if (!self.isFirstTimeLaunch) {
-        return;
+    if (self.isFirstTimeLaunch) {
+        self.isFirstTimeLaunch = NO;
+        [self.landingView appearWithAnimation];
     }
-    self.isFirstTimeLaunch = NO;
-    
-    [self.landingView appearWithAnimation];
+
+    // Update suggestions if needed.
+    if ([self isSuggestionStale]) {
+        NSLog(@"Update suggestions");
+        [[CardManager sharedManager] getLatestCards:3 success:^(NSArray *cards) {
+            self.suggestions = cards;
+            [self.landingView setupSuggestButtons:self.suggestions];
+            for (UIButton *button in self.landingView.suggestButtons) {
+                [button addTarget:self action:@selector(suggestButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+            }
+        } failure:nil];
+    }
 }
 
 #pragma mark - Swipe action.
 - (void)swipeLeft:(UISwipeGestureRecognizer *)gestureRecognizer {
     NSString *channel = [[UserData sharedUserData] lastChannel];
     if (channel) {
-        [self goToChannel:channel];
+        [self goToChannel:channel andDismissKeyboard:YES];
     }
 }
 
@@ -79,25 +82,32 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     NSString *channel = textField.text;
     if ([MSUtils isChannelValid:channel]) {
-        [self dismissKeyboard];
-        [self.landingView toggleChannelValidity:YES animated:YES];
-        [self goToChannel:channel];
+        [self goToChannel:channel andDismissKeyboard:YES];
     } else {
-        [self.landingView toggleChannelValidity:NO animated:YES];
+        [MSUtils showErrorAlertWithTitle:@"Invalid channel" andMessage:@"Only letters and digits are allowed." andPosition:OLGhostAlertViewPositionCenter];
+        [self.landingView shakeChannelTextField];
     }
     return YES;
 }
 
-#pragma mark - button.
+#pragma mark - Private methods.
 - (void)infoButtonAction:(id)sender {
-    [self dismissKeyboard];
-
     self.landingView.channelTextField.text = @"About";
-    [self goToChannel:@"About"];
+    [self goToChannel:@"About" andDismissKeyboard:YES];
 }
 
-- (void)goToChannel:(NSString *)channel {
+- (void)suggestButtonAction:(id)sender {
+    NSString *channel = [[(UIButton *)sender titleLabel] text];
+    self.landingView.channelTextField.text = channel;
+    [self goToChannel:channel andDismissKeyboard:YES];
+}
+
+- (void)goToChannel:(NSString *)channel andDismissKeyboard:(BOOL)dismiss {
     [SVProgressHUD show];
+
+    if (dismiss) {
+        [self dismissKeyboard];
+    }
     [[CardManager sharedManager] getByChannel:channel success:^(Card *card) {
         [SVProgressHUD dismiss];
         [[UserData sharedUserData] setLastChannel:channel];
@@ -116,17 +126,17 @@
     }];
 }
 
-- (void)suggestButtonAction:(id)sender {
-    [self dismissKeyboard];
-    NSLog(@"333");
-    NSString *channel = [[(UIButton *)sender titleLabel] text];
-    self.landingView.channelTextField.text = channel;
-    [self goToChannel:channel];
-}
-
 - (void)dismissKeyboard {
     [self.landingView hideSuggestions];
     [self.landingView.channelTextField resignFirstResponder];
+}
+
+- (BOOL)isSuggestionStale {
+    if (!self.suggestions || !self.suggestions.count) {
+        return YES;
+    }
+    Card *card = (Card *)self.suggestions[0];
+    return (-[card.createTime timeIntervalSinceNow] > 60 * 60);
 }
 
 @end
