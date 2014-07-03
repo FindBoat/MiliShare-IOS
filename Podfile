@@ -5,3 +5,4 @@ pod 'GCPlaceholderTextView'
 pod 'UITextField+Shake'
 pod 'OLGhostAlertView'
 pod 'SVProgressHUD', :head
+pod 'MYBlurIntroductionView'

@@ -10,8 +10,10 @@
 
 @implementation Constants
 
-NSString *const BaseServerURL = @"http://millisync.com";
-//NSString *const BaseServerURL = @"http://localhost:9999";
+NSString *const kBaseServerURL = @"http://millisync.com";
+//NSString *const kBaseServerURL = @"http://localhost:9999";
+
+NSString *const kUserDefaultHasLaunched = @"HasLaunch";
 
 
 @end

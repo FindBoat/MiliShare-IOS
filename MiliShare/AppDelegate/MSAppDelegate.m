@@ -10,6 +10,7 @@
 #import "LandingViewController.h"
 #import "UserData.h"
 #import "NavigationControllerDelegate.h"
+#import "IntroViewController.h"
 
 @implementation MSAppDelegate
 
@@ -19,12 +20,24 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    
-    LandingViewController *landingViewController = [LandingViewController new];
-    landingViewController.isFirstTimeLaunch = YES;
-    self.navigationControllerDelegate = [NavigationControllerDelegate new];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:landingViewController];
+
+    UINavigationController *navigationController;
+
+    if([[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultHasLaunched]) {
+        LandingViewController *landingViewController = [LandingViewController new];
+        landingViewController.isFirstTimeLaunch = YES;
+        navigationController = [[UINavigationController alloc] initWithRootViewController:landingViewController];
+    } else {
+        // First time launch.
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kUserDefaultHasLaunched];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        IntroViewController *introViewController = [IntroViewController new];
+        navigationController = [[UINavigationController alloc] initWithRootViewController:introViewController];
+    }
+
     // This delegate implements bounce navigate animation.
+    self.navigationControllerDelegate = [NavigationControllerDelegate new];
     navigationController.delegate = self.navigationControllerDelegate;
     self.window.rootViewController = navigationController;
 

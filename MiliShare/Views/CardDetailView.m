@@ -104,7 +104,7 @@
 
     if (toggle) {
         self.channelLabel.text = channel;
-        NSString *link = [NSString stringWithFormat:@"%@/%@", BaseServerURL, channel];
+        NSString *link = [NSString stringWithFormat:@"%@/%@", kBaseServerURL, channel];
         self.instructionLabel.text = [NSString stringWithFormat:@"Share this card by channel or visit %@", link];
         NSRange range = [self.instructionLabel.text rangeOfString:link];
         [self.instructionLabel addLinkToURL:[NSURL URLWithString:link] withRange:range];
@@ -119,7 +119,7 @@
     if (toggle) {
         self.channelLabel.text = card.channel;
         self.contentLabel.text = card.content;
-        NSString *link = [NSString stringWithFormat:@"%@/%@", BaseServerURL, card.channel];
+        NSString *link = [NSString stringWithFormat:@"%@/%@", kBaseServerURL, card.channel];
         self.instructionLabel.text = [NSString stringWithFormat:@"Share this card by channel or visit %@", link];
         NSRange range = [self.instructionLabel.text rangeOfString:link];
         [self.instructionLabel addLinkToURL:[NSURL URLWithString:link] withRange:range];

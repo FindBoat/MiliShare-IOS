@@ -28,6 +28,7 @@
         self.channelTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
         self.channelTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
         self.channelTextField.font = [UIFont fontWithName:@"HelveticaNeue" size:16.0];
+        self.channelTextField.hidden = YES;
         self.channelTextField.translatesAutoresizingMaskIntoConstraints = NO;
         [self addSubview:self.channelTextField];
 
@@ -38,11 +39,13 @@
         self.instructionLabel.textColor = [UIColor lightGrayColor];
         self.instructionLabel.lineBreakMode = NSLineBreakByWordWrapping;
         self.instructionLabel.numberOfLines = 0;
+        self.instructionLabel.hidden = YES;
         self.instructionLabel.translatesAutoresizingMaskIntoConstraints = NO;
         [self addSubview:self.instructionLabel];
         
         self.infoButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
         self.infoButton.tintColor = [UIColor lightGrayColor];
+        self.infoButton.hidden = YES;
         self.infoButton.translatesAutoresizingMaskIntoConstraints = NO;
         [self addSubview:self.infoButton];
         
@@ -128,7 +131,14 @@
                                                       constant:30.0f]];
 }
 
-- (void)appearWithAnimation {
+- (void)appearWithAnimation:(BOOL)animated {
+    self.instructionLabel.hidden = NO;
+    self.channelTextField.hidden = NO;
+    self.infoButton.hidden = NO;
+    if (!animated) {
+        return;
+    }
+
     // Animation for channelTextField. First set y to 0, then use spring animation to present it.
     CGRect finalPosition = self.channelTextField.frame;
     CGRect startPosition = self.channelTextField.frame;
@@ -136,7 +146,7 @@
     self.channelTextField.frame = startPosition;
     
     [UIView animateWithDuration:1.5
-                          delay:0.4
+                          delay:0
          usingSpringWithDamping:0.45
           initialSpringVelocity:0.0
                         options:0
@@ -149,7 +159,7 @@
     self.instructionLabel.alpha = 0.0;
     self.infoButton.alpha = 0.0;
     [UIView animateWithDuration:0.5
-                          delay:0.9
+                          delay:0.5
                         options:0
                      animations:^{
                          self.instructionLabel.alpha = 1.0;
@@ -214,15 +224,15 @@
 }
 
 - (void)showSuggestions {
-    for (UIButton *button in self.suggestButtons) {
-        [self animateSuggestButton:button appear:YES];
+    for (int i = 0; i < self.suggestButtons.count; ++i) {
+        [self animateSuggestButton:self.suggestButtons[i] appear:YES delay: i * .1];
     }
 }
 
 
 - (void)hideSuggestions {
     for (UIButton *button in self.suggestButtons) {
-        [self animateSuggestButton:button appear:NO];
+        [self animateSuggestButton:button appear:NO delay:0];
     }
 }
 
@@ -244,22 +254,21 @@
     return button;
 }
 
-- (void)animateSuggestButton:(UIButton *)button appear:(BOOL)appear {
+- (void)animateSuggestButton:(UIButton *)button appear:(BOOL)appear delay:(float)delay {
     if (appear) {
-        float randomDelay = ((double)arc4random() / ARC4RANDOM_MAX) * .3;
         button.hidden = NO;
         button.transform = CGAffineTransformMakeScale(0.01, 0.01);
-        [UIView animateKeyframesWithDuration:0.35
-                                       delay:randomDelay
+        [UIView animateKeyframesWithDuration:0.3
+                                       delay:delay
                                      options:0
                                   animations:^{
                                       [UIView addKeyframeWithRelativeStartTime:0
-                                                              relativeDuration:0.8
+                                                              relativeDuration:0.6
                                                                     animations:^{
-                                                                        button.transform = CGAffineTransformMakeScale(1.3, 1.3);
+                                                                        button.transform = CGAffineTransformMakeScale(1.45, 1.45);
                                                                     }];
-                                      [UIView addKeyframeWithRelativeStartTime:0.8
-                                                              relativeDuration:0.2
+                                      [UIView addKeyframeWithRelativeStartTime:0.6
+                                                              relativeDuration:0.4
                                                                     animations:^{
                                                                         button.transform = CGAffineTransformIdentity;
                                                                     }];
@@ -267,7 +276,7 @@
                                   completion:nil];
     } else {
         [UIView animateKeyframesWithDuration:0.35
-                                       delay:0
+                                       delay:delay
                                      options:0
                                   animations:^{
                                       [UIView addKeyframeWithRelativeStartTime:0

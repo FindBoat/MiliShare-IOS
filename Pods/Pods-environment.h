@@ -18,6 +18,12 @@
 #define COCOAPODS_VERSION_MINOR_GCPlaceholderTextView 0
 #define COCOAPODS_VERSION_PATCH_GCPlaceholderTextView 1
 
+// MYBlurIntroductionView
+#define COCOAPODS_POD_AVAILABLE_MYBlurIntroductionView
+#define COCOAPODS_VERSION_MAJOR_MYBlurIntroductionView 1
+#define COCOAPODS_VERSION_MINOR_MYBlurIntroductionView 0
+#define COCOAPODS_VERSION_PATCH_MYBlurIntroductionView 3
+
 // OLGhostAlertView
 #define COCOAPODS_POD_AVAILABLE_OLGhostAlertView
 #define COCOAPODS_VERSION_MAJOR_OLGhostAlertView 1

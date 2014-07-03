@@ -50,7 +50,9 @@
     // The animation below only happens for once.
     if (self.isFirstTimeLaunch) {
         self.isFirstTimeLaunch = NO;
-        [self.landingView appearWithAnimation];
+        [self.landingView appearWithAnimation:YES];
+    } else {
+        [self.landingView appearWithAnimation:NO];
     }
 
     // Update suggestions if needed.

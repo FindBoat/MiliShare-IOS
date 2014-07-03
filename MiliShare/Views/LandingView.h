@@ -17,7 +17,7 @@
 // Suggest.
 @property (nonatomic, strong) NSMutableArray *suggestButtons;
 
-- (void)appearWithAnimation;
+- (void)appearWithAnimation:(BOOL)animated;
 - (void)shakeChannelTextField;
 
 - (void)setupSuggestButtons:(NSArray *)suggestions;

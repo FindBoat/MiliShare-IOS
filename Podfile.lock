@@ -1,6 +1,7 @@
 PODS:
   - AFNetworking (1.3.4)
   - GCPlaceholderTextView (1.0.1)
+  - MYBlurIntroductionView (1.0.3)
   - OLGhostAlertView (1.7)
   - RestKit (0.20.3):
     - RestKit/Core
@@ -25,6 +26,7 @@ PODS:
 
 DEPENDENCIES:
   - GCPlaceholderTextView
+  - MYBlurIntroductionView
   - OLGhostAlertView
   - RestKit (~> 0.20.0rc)
   - SVProgressHUD (HEAD)
@@ -34,6 +36,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 80c4e0652b08eb34e25b9c0ff3c82556fe5967b4
   GCPlaceholderTextView: d48f3558c8d71daaae65679275075592ca13e1c8
+  MYBlurIntroductionView: 6caf60805eaa555538aba9e2615820fd6f07cd23
   OLGhostAlertView: 8b963aacbce7b26c0d552743dd3a15ee568c16b8
   RestKit: 7f9490e709ee745e166c4d2aa7a8d132831275b0
   SOCKit: d8d0dd3688ae1026c12367570da8fa8e1a6980fb

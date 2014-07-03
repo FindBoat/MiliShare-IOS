@@ -12,7 +12,7 @@
 @implementation MSObjectManager
 
 + (instancetype)sharedManager {
-    NSURL *url = [NSURL URLWithString:BaseServerURL];
+    NSURL *url = [NSURL URLWithString:kBaseServerURL];
     
     MSObjectManager *sharedManager  = [self managerWithBaseURL:url];
     sharedManager.requestSerializationMIMEType = RKMIMETypeJSON;

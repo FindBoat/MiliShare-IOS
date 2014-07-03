@@ -8,6 +8,7 @@
 
 @interface Constants : NSObject
 
-extern NSString *const BaseServerURL;
+extern NSString *const kBaseServerURL;
+extern NSString *const kUserDefaultHasLaunched;
 
 @end

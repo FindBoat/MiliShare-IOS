@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		D4F69F24DB284AFEB1163F0F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C847747BEE7543D4B573623F /* libPods.a */; };
 		FD1582E119513E67009C467C /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1582E019513E67009C467C /* Constants.m */; };
+		FD315DC4196259CD00644F24 /* CardDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD315DC3196259CD00644F24 /* CardDetailController.m */; };
+		FD315DD41964D05A00644F24 /* intro7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD315DD31964D05A00644F24 /* intro7.jpg */; };
+		FD315DD61964DAF300644F24 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD315DD51964DAF300644F24 /* IntroViewController.m */; };
 		FD6EAF1B192D2555002CE5D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6EAF1A192D2555002CE5D0 /* Foundation.framework */; };
 		FD6EAF1D192D2555002CE5D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6EAF1C192D2555002CE5D0 /* CoreGraphics.framework */; };
 		FD6EAF1F192D2555002CE5D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6EAF1E192D2555002CE5D0 /* UIKit.framework */; };
@@ -27,7 +30,6 @@
 		FD6EAF5A192D43AA002CE5D0 /* CardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EAF59192D43AA002CE5D0 /* CardManager.m */; };
 		FD6EAF5F192D5DCD002CE5D0 /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EAF5E192D5DCD002CE5D0 /* LandingViewController.m */; };
 		FD6EAF62192D5EBE002CE5D0 /* LandingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EAF61192D5EBE002CE5D0 /* LandingView.m */; };
-		FD6EAF65192DAD53002CE5D0 /* CardDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EAF64192DAD53002CE5D0 /* CardDetailController.m */; };
 		FD6EAF68192DAD62002CE5D0 /* CardDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EAF67192DAD62002CE5D0 /* CardDetailView.m */; };
 		FD6EAF75192FF99B002CE5D0 /* MSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EAF74192FF99B002CE5D0 /* MSUtils.m */; };
 		FD718FC41940222E00A8559F /* AttributedLabelDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD718FC31940222E00A8559F /* AttributedLabelDelegate.m */; };
@@ -52,6 +54,11 @@
 		C847747BEE7543D4B573623F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD1582DF19513E67009C467C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		FD1582E019513E67009C467C /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		FD315DBC1962582900644F24 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
+		FD315DC2196259CD00644F24 /* CardDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDetailController.h; sourceTree = "<group>"; };
+		FD315DC3196259CD00644F24 /* CardDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDetailController.m; sourceTree = "<group>"; };
+		FD315DD31964D05A00644F24 /* intro7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro7.jpg; sourceTree = "<group>"; };
+		FD315DD51964DAF300644F24 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
 		FD6EAF17192D2555002CE5D0 /* MilliSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MilliSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6EAF1A192D2555002CE5D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FD6EAF1C192D2555002CE5D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -80,8 +87,6 @@
 		FD6EAF5E192D5DCD002CE5D0 /* LandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LandingViewController.m; path = MiliShare/Controllers/LandingViewController.m; sourceTree = SOURCE_ROOT; };
 		FD6EAF60192D5EBE002CE5D0 /* LandingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LandingView.h; path = MiliShare/Views/LandingView.h; sourceTree = SOURCE_ROOT; };
 		FD6EAF61192D5EBE002CE5D0 /* LandingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LandingView.m; path = MiliShare/Views/LandingView.m; sourceTree = SOURCE_ROOT; };
-		FD6EAF63192DAD53002CE5D0 /* CardDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardDetailController.h; path = MiliShare/Controllers/CardDetailController.h; sourceTree = SOURCE_ROOT; };
-		FD6EAF64192DAD53002CE5D0 /* CardDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardDetailController.m; path = MiliShare/Controllers/CardDetailController.m; sourceTree = SOURCE_ROOT; };
 		FD6EAF66192DAD62002CE5D0 /* CardDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardDetailView.h; path = MiliShare/Views/CardDetailView.h; sourceTree = SOURCE_ROOT; };
 		FD6EAF67192DAD62002CE5D0 /* CardDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardDetailView.m; path = MiliShare/Views/CardDetailView.m; sourceTree = SOURCE_ROOT; };
 		FD6EAF73192FF99B002CE5D0 /* MSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUtils.h; sourceTree = "<group>"; };
@@ -125,6 +130,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD315DBB1962581E00644F24 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				FD315DBC1962582900644F24 /* IntroViewController.h */,
+				FD315DD51964DAF300644F24 /* IntroViewController.m */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		FD315DBF196258A600644F24 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FD315DD31964D05A00644F24 /* intro7.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		FD6EAF0E192D2555002CE5D0 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +185,7 @@
 		FD6EAF20192D2555002CE5D0 /* MiliShare */ = {
 			isa = PBXGroup;
 			children = (
+				FD315DBF196258A600644F24 /* Resources */,
 				FD6EAF4D192D293F002CE5D0 /* Models */,
 				FD6EAF51192D4275002CE5D0 /* Services */,
 				FD6EAF5B192D5D1E002CE5D0 /* Controllers */,
@@ -241,6 +264,7 @@
 		FD6EAF5B192D5D1E002CE5D0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FD315DBB1962581E00644F24 /* Intro */,
 				FD718FC0194021CE00A8559F /* Landing */,
 				FD718FC1194021D300A8559F /* CardDetail */,
 				FD718FC81946B73000A8559F /* MSWebViewController.h */,
@@ -301,8 +325,8 @@
 		FD718FC1194021D300A8559F /* CardDetail */ = {
 			isa = PBXGroup;
 			children = (
-				FD6EAF63192DAD53002CE5D0 /* CardDetailController.h */,
-				FD6EAF64192DAD53002CE5D0 /* CardDetailController.m */,
+				FD315DC2196259CD00644F24 /* CardDetailController.h */,
+				FD315DC3196259CD00644F24 /* CardDetailController.m */,
 				FD718FC21940222E00A8559F /* AttributedLabelDelegate.h */,
 				FD718FC31940222E00A8559F /* AttributedLabelDelegate.m */,
 			);
@@ -392,6 +416,7 @@
 			files = (
 				FD6EAF25192D2555002CE5D0 /* InfoPlist.strings in Resources */,
 				FD6EAF2D192D2556002CE5D0 /* Images.xcassets in Resources */,
+				FD315DD41964D05A00644F24 /* intro7.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,11 +469,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDE4A0261936C6230058B610 /* NavigationControllerDelegate.m in Sources */,
-				FD6EAF65192DAD53002CE5D0 /* CardDetailController.m in Sources */,
 				FD6EAF68192DAD62002CE5D0 /* CardDetailView.m in Sources */,
 				FD718FC41940222E00A8559F /* AttributedLabelDelegate.m in Sources */,
 				FD6EAF62192D5EBE002CE5D0 /* LandingView.m in Sources */,
 				FD6EAF4C192D2933002CE5D0 /* MSAppDelegate.m in Sources */,
+				FD315DC4196259CD00644F24 /* CardDetailController.m in Sources */,
 				FD6EAF5F192D5DCD002CE5D0 /* LandingViewController.m in Sources */,
 				FD6EAF57192D431E002CE5D0 /* MSObjectManager.m in Sources */,
 				FD1582E119513E67009C467C /* Constants.m in Sources */,
@@ -456,6 +481,7 @@
 				FDE4A0291936C6610058B610 /* BounceAnimator.m in Sources */,
 				FD6EAF50192D41AD002CE5D0 /* Card.m in Sources */,
 				FD718FCA1946B73100A8559F /* MSWebViewController.m in Sources */,
+				FD315DD61964DAF300644F24 /* IntroViewController.m in Sources */,
 				FD6EAF54192D428A002CE5D0 /* MappingProvider.m in Sources */,
 				FD6EAF5A192D43AA002CE5D0 /* CardManager.m in Sources */,
 				FDE00A3A19331AF1007CD5F1 /* UserData.m in Sources */,
