@@ -156,13 +156,25 @@
                      completion:nil];
     
     // Animatin for instructionLabel and infoButton.
+    CGRect instructionLabelFinalPositon = self.instructionLabel.frame;
+    CGRect instructionLabelStartPositon = self.instructionLabel.frame;
+    instructionLabelStartPositon.origin.y += 15;
+    self.instructionLabel.frame = instructionLabelStartPositon;
     self.instructionLabel.alpha = 0.0;
+
+    CGRect infoButtonFinalPosition = self.infoButton.frame;
+    CGRect infoButtonStartPosition = self.infoButton.frame;
+    infoButtonStartPosition.origin.y += 15;
+    self.infoButton.frame = infoButtonStartPosition;
     self.infoButton.alpha = 0.0;
-    [UIView animateWithDuration:0.5
-                          delay:0.5
+
+    [UIView animateWithDuration:0.3
+                          delay:0.6
                         options:0
                      animations:^{
+                         self.instructionLabel.frame = instructionLabelFinalPositon;
                          self.instructionLabel.alpha = 1.0;
+                         self.infoButton.frame = infoButtonFinalPosition;
                          self.infoButton.alpha = 1.0;
                      }
                      completion:nil];
